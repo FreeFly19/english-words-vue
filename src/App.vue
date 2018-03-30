@@ -5,8 +5,13 @@
 </template>
 
 <script>
+import Vocabulary from './components/Vocabulary'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Vocabulary
+  }
 }
 </script>
 
