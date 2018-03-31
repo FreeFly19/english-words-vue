@@ -10,15 +10,24 @@ export default new Vuex.Store({
   },
   mutations: {
     addPhrase (state, phrase) {
-      state.phrases.push(phrase)
+      state.phrases.unshift(phrase)
+    },
+    initPhrases (state, phrases) {
+      state.phrases = phrases
     }
   },
   actions: {
     getPhrases ({ commit }) {
-      axios.get('/api/phrases')
-        .then(res => {
-          res.data.forEach(p => commit('addPhrase', p))
-        })
+      return axios.get('/api/phrases')
+        .then(({data}) => {
+          commit('initPhrases', data)
+        }, console.error)
+    },
+    translatePhrase ({ commit }, phrase) {
+      return axios.put('/api/phrases', {phrase})
+        .then(({data}) => {
+          commit('addPhrase', data)
+        }, console.error)
     }
   }
 })
