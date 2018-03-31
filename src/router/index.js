@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Vocabulary from '@/components/Vocabulary'
+import {fetchPhrases} from './guards'
 
 Vue.use(Router)
 
@@ -10,7 +11,8 @@ export default new Router({
     {
       path: '/',
       name: 'Vocabulary',
-      component: Vocabulary
+      component: Vocabulary,
+      beforeEnter: fetchPhrases
     }
   ]
 })

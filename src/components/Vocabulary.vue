@@ -1,9 +1,6 @@
 <template>
   <div>
     <h2>Vocabulary</h2>
-    <div>
-      <button @click="addPhraseMethod">Add Phrase</button>
-    </div>
     <table width="100%">
       <thead>
       <tr>
@@ -38,12 +35,7 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'Vocabulary',
-  computed: mapState(['phrases']),
-  methods: {
-    addPhraseMethod () {
-      this.$store.commit('addPhrase')
-    }
-  }
+  computed: mapState(['phrases'])
 }
 </script>
 
