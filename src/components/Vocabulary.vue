@@ -9,11 +9,10 @@
     <table width="100%">
       <thead>
       <tr>
-        <th>Phrase</th>
-        <th>Translated At</th>
-        <th>Meanings</th>
-        <th>Notes</th>
-        <th>Actions</th>
+        <th width="15%">Phrase</th>
+        <th width="15%">Translated At</th>
+        <th width="55%">Translations</th>
+        <th width="10%">Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -27,8 +26,7 @@
             </li>
           </ol>
         </td>
-        <td>Notes</td>
-        <td>Actions</td>
+        <td><i class="fa fa-remove"></i></td>
       </tr>
       </tbody>
     </table>
