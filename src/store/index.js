@@ -24,7 +24,7 @@ export default new Vuex.Store({
         }, console.error)
     },
     translatePhrase ({ commit }, phrase) {
-      return axios.put('/api/phrases', {phrase})
+      return axios.post('/api/phrases', {phrase})
         .then(({data}) => {
           commit('addPhrase', data)
         }, console.error)
