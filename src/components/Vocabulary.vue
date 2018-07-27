@@ -26,7 +26,7 @@
             </li>
           </ol>
         </td>
-        <td><i class="fa fa-remove"></i></td>
+        <td><i @click="deletePhrase(phrase.id)" class="fa fa-remove"></i></td>
       </tr>
       </tbody>
     </table>
@@ -55,6 +55,9 @@ export default {
           this.phrase = ''
           this.isLoading = false
         })
+    },
+    deletePhrase (id) {
+      this.$store.dispatch('deletePhrase', id)
     }
   }
 }

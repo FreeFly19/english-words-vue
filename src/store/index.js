@@ -14,6 +14,9 @@ export default new Vuex.Store({
     },
     initPhrases (state, phrases) {
       state.phrases = phrases
+    },
+    removePhrase (state, id) {
+      state.phrases.splice(state.phrases.findIndex(p => p.id === id), 1)
     }
   },
   actions: {
@@ -27,6 +30,12 @@ export default new Vuex.Store({
       return axios.post('/api/phrases', {phrase})
         .then(({data}) => {
           commit('addPhrase', data)
+        }, console.error)
+    },
+    deletePhrase ({ commit }, id) {
+      return axios.delete(`/api/phrases/${id}`)
+        .then(() => {
+          commit('removePhrase', id)
         }, console.error)
     }
   }
